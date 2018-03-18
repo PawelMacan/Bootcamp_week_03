@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona główna</title>
+</head>
+<body>
+<p>Witaj urzytkowniku</p>
+
+<label><a href="{% url 'add_room' %}"><button type="button" name="add_room">Dodaj nową salę</button></a></label>
+
+
+<h2>Dostępne sale: </h2>
+<table>
+{% for room in rooms %}
+    <tr>
+        <td>ID:         {{ room.id }}       </td>
+        <td>Sala:       {{ room.name }}     </td>
+        <td>Pojemność:  {{ room.room_size }}</td>
+        <td>Projektor:  {{ room.projector }}
+            <label><a href="{% url 'modify_go' room.id %}"><button type="button" name="modify_go">Modyfikuj</button></a></label>
+            <label><a href="{% url 'reserve' room.id %}"><button type="button" name="reserve">Rezerwuj</button></a></label>
+            <label><a href="{% url 'delete' room.id %}"><button type="button" name="delete">Usuń salę </button></a></label>
+
+    </tr>
+{% endfor %}
+</table>
+<br>
+{{message}}
+</body>
+</html>
