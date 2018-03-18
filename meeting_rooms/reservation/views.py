@@ -36,7 +36,7 @@ class AddRoom(View):
 
         return render(request, 'add_room.html', context=context)
 
-gi
+
 class AllRooms(View):
     def get(self, request):
         rooms = Room.objects.all()
