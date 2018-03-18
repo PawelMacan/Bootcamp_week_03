@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rezerwuj</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td>ID:         {{ room.id }}       </td>
+        <td>Sala:       {{ room.name }}     </td>
+        <td>Pojemność:  {{ room.room_size }}</td>
+        <td>Projektor:  {{ room.projector }}
+            <label>
+        </label>
+        </td>
+    </tr>
+</table>
+<br>
+
+
+
+    <div>
+        <form method="POST">
+            <label>Rezerwuj salę: {{ room.name }}</label><br>
+            <label>Wybierz date </label>
+            <input name="reservation_date" type="date" placeholder="Wielkosc sali" value=""/><br>
+            <input name="coment" type="text" placeholder="Komentarz" value=""/><br>
+            <button type="submit" name="submit">Rezerwuj</button>
+            <br>
+            {{message}}
+        </form>
+
+    </div>
+
+</body>
+</html>

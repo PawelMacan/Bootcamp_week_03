@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj sale</title>
+</head>
+<body>
+<p>Witaj urzytkowniku</p>
+    <div>
+        <form method="POST">
+            <label>Dodaj salę !</label><br>
+            <input name="room_name" type="text" placeholder="Nazwa sali" value=""/><br>
+            <input name="room_size" type="number" placeholder="Wielkosc sali" value=""/><br>
+            <label><input name="room_projector" type="checkbox" />Posiada projektor</label><br>
+            <button type="submit" name="submit">Dodaj salę </button>
+            <br>
+            {{message}}
+        </form>
+
+    </div>
+<br>
+    <a href="{% url 'index' %}">
+    <button type="button" name="back">Return</button></a>
+<br>
+
+</body>
+</html>
